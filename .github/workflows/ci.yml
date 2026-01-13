@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-
       - name: Install Java
         uses: actions/setup-java@v1
         with:
@@ -20,6 +19,6 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew build -x test
-          
+
       - name: Run tests
         run: ./gradlew test      
