@@ -1,4 +1,5 @@
 name: continuous integration example
+
 on:
   push:
     branches:
@@ -14,9 +15,11 @@ jobs:
         uses: actions/setup-java@v1
         with:
         java-version: 11
+
       - name: Build with Gradle
         run: |
           chmod +x gradlew
           ./gradlew build -x test
+          
       - name: Run tests
         run: ./gradlew test      
